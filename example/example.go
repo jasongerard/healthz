@@ -11,7 +11,6 @@ import (
 	"time"
 
 	"github.com/jasongerard/healthz"
-	"github.com/pkg/errors"
 )
 
 var ready = false
@@ -24,7 +23,7 @@ func main() {
 	go func() {
 		signalChan := make(chan os.Signal)
 		signal.Notify(signalChan, syscall.SIGINT)
-		errs <- errors.Errorf("%s", <-signalChan)
+		errs <- fmt.Errorf("%s", <-signalChan)
 	}()
 
 	// set up our healthcheck server
