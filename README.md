@@ -11,6 +11,6 @@ healthz will expose two HTTP endpoints:
 By default, both use a simple check that always returns true. For passsing probes, the endpoints return 200 OK. For failing probes the 
 endpoints return 503 Service Unavailable. 
 
-## Eample usage
+## Example usage
 
 See example/example.go for example usage
