@@ -25,7 +25,7 @@ func LivenessCheck(fn CheckFunc) {
 	liveness = fn
 }
 
-// ReadinessCheck sets the prod for the /healthz/ready endpoint
+// ReadinessCheck sets the probe for the /healthz/ready endpoint
 func ReadinessCheck(fn CheckFunc) {
 	if fn == nil {
 		return
